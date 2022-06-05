@@ -1,0 +1,82 @@
+name: Host System Builder
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+
+  macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2.2.1
+      with:
+        python-version: '3.9.x'
+    - run: python3 -m pip install -r requirements.txt
+    - run: python3 -m pytest test/run_tests.py
+
+  windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2.2.1
+      with:
+        python-version: '3.9.x'
+    - run: python -m pip install -r requirements.txt
+    - run: python -m pytest test/run_tests.py
+
+  chrome_book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: nanasess/setup-chromedriver@v1.0.5
+    - uses: actions/setup-python@v2.2.1
+      with:
+        python-version: '3.9.x'
+    - run: chromedriver --url-base=/wd/hub &
+    - run: python3 -m pip install pytest
+    - run: python3 -m pytest test/run_tests.py
+
+  ubuntu_linux:
+    runs-on: ubuntu-latest
+    container:
+      image: "michaelbrockus/ubuntu-host:latest"
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        python3 -m pytest test/run_tests.py
+      working-directory: .
+ 
+  debian_linux:
+    runs-on: ubuntu-latest
+    container:
+      image: "michaelbrockus/debian-host:latest"
+    steps:
+    - uses: actions/checkout@v2.3.2
+    - run: |
+        python3 -m pytest test/run_tests.py
+      working-directory: .
+
+#   fedora_linux:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: "michaelbrockus/fedora-host:latest"
+#     steps:
+#     - uses: actions/checkout@v2
+#     - run: |
+#         python3 -m pytest test/run_tests.py
+#       working-directory: .
+
+#   arch_linux:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: "michaelbrockus/archlinux-host:latest"
+#     steps:
+#     - uses: actions/checkout@v2.3.2
+#     - run: |
+#         python3 -m pytest test/run_tests.py
+#       working-directory: .
