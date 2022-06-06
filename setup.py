@@ -10,13 +10,14 @@ from setuptools import setup
 
 if __name__ == '__main__':
     setup(
-        name='package',
+        name='meson-cli-wrap',
         version='0.1.0',
         author='Michael Gene Brockus',
         license='Apache 2',
         zip_safe=True,
-        url='https://github.com/troglobyte-coder/pypi_package_py',
+        url='https://github.com/troglobyte-stdlib/meson-cli-wrap',
         packages=[
-            'code'
+            'code',
+            'code.mesoncli'
         ],
         python_requires='>=3.8')
