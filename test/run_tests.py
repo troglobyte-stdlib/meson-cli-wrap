@@ -80,13 +80,13 @@ class TestMeson:
     def test_change_srcdir(self):
         meson = Meson('test/dir/one', 'test/dir/one/builddir')
 
-        assert(meson.sourcedir == 'test/dir/one')
+        assert(meson.srcdir == 'test/dir/one')
         assert(meson.builddir == 'test/dir/one/builddir')
 
-        meson.sourcedir = 'test/dir/two'
+        meson.srcdir = 'test/dir/two'
         meson.builddir = 'test/dir/two/builddir'
 
-        assert(meson.sourcedir == 'test/dir/two')
+        assert(meson.srcdir == 'test/dir/two')
         assert(meson.builddir == 'test/dir/two/builddir')
 
     def test_setup_command(self, tmpdir):
