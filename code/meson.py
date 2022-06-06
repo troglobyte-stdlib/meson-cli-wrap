@@ -5,11 +5,14 @@
 # author: Michael Gene Brockus
 # Gmail: <mail: michaelbrockus@gmail.com>
 #
+from .mesoncli.subprojects import MesonSubprojects
 from .mesoncli.configure import MesonConfigure
 from .mesoncli.version import MesonVersion
 from .mesoncli.compile import MesonCompile
 from .mesoncli.clean import MesonClean
 from .mesoncli.setup import MesonSetup
+from .mesoncli.wrap import MesonWrap
+from .mesoncli.dist import MesonDist
 from .mesoncli.init import MesonInit
 from .mesoncli.test import MesonTest
 
@@ -29,7 +32,7 @@ class MesonCLI:
     # end of method
 
     def subprojects(self, args: list = []):
-        pass
+        return MesonSubprojects(self._srcdir)
     # end of method
 
     def configure(self, args: list = []):
@@ -49,11 +52,11 @@ class MesonCLI:
     # end of method
 
     def dist(self, args: list = []):
-        pass
+        return MesonDist(self._builddir).run(args)
     # end of method
 
-    def wrap(self, args: list = []):
-        pass
+    def wrap(self):
+        return MesonWrap()
     # end of method
 
     def init(self, args: list = []):
