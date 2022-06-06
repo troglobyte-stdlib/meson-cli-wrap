@@ -109,27 +109,6 @@ class TestMeson:
         assert tmpdir.join('builddir', 'build.ninja').ensure()
         assert tmpdir.join('builddir', 'compile_commands.json').ensure()
 
-    def test_build_command(self, tmpdir):
-        #
-        # Setting up tmp test directory
-        with tmpdir.as_cwd():
-            pass
-        tmpdir.chdir()
-
-        #
-        # Running Meson command
-        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
-
-        meson.init(['--language=c', '--type=executable'])
-        meson.setup(['--backend=ninja'])
-        meson.build()
-
-        #
-        # Run asserts to check it is working
-        assert tmpdir.join('meson.build').ensure()
-        assert tmpdir.join('builddir', 'build.ninja').ensure()
-        assert tmpdir.join('builddir', 'compile_commands.json').ensure()
-
     def test_configure_command(self, tmpdir):
         #
         # Setting up tmp test directory
