@@ -27,21 +27,21 @@ class MesonSubprojects:
 
     def update(self, subproject):
         '''update current subprojects to the latest version'''
-        run_cmd = ['meson', 'subprojects', 'update', subproject, '--sourcedir', str(self._sourcedir)]
+        run_cmd = ['meson', 'subprojects', 'update', subproject, '--sourcedir', str(self._srcdir)]
         process = subprocess.Popen(run_cmd, encoding='utf8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         return process.communicate()[0]
     # end of method
 
     def checkout(self, branch: str, subproject):
         '''Should checkout a branch in a project repo'''
-        run_cmd = ['meson', 'subprojects', 'checkout', branch, subproject, '--sourcedir', str(self._sourcedir)]
+        run_cmd = ['meson', 'subprojects', 'checkout', branch, subproject, '--sourcedir', str(self._srcdir)]
         process = subprocess.Popen(run_cmd, encoding='utf8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         return process.communicate()[0]
     # end of method
 
     def download(self, subproject):
         '''Should download subprojects ahead of time'''
-        run_cmd = ['meson', 'subprojects', 'download', subproject, '--sourcedir', str(self._sourcedir)]
+        run_cmd = ['meson', 'subprojects', 'download', subproject, '--sourcedir', str(self._srcdir)]
         process = subprocess.Popen(run_cmd, encoding='utf8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         return process.communicate()[0]
     # end of method

@@ -77,7 +77,7 @@ systems features.
 
 class TestMeson:
 
-    def test_change_sourcedir(self):
+    def test_change_srcdir(self):
         meson = Meson('test/dir/one', 'test/dir/one/builddir')
 
         assert(meson.sourcedir == 'test/dir/one')

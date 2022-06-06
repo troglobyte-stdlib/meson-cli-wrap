@@ -32,7 +32,7 @@ class MesonSetup:
         using Meson build systems setup command in the
         background.
         '''
-        run_cmd = ['meson', 'setup', str(self._sourcedir), str(self._builddir)]
+        run_cmd = ['meson', 'setup', str(self._srcdir), str(self._builddir)]
         run_cmd.extend(args)
         process = subprocess.Popen(run_cmd, encoding='utf8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         return process.communicate()[0]
