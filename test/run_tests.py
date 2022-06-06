@@ -5,7 +5,7 @@
 # author: Michael Gene Brockus
 # Gmail: <mail: michaelbrockus@gmail.com>
 #
-from code.meson import MesonCLI as Meson
+from code.mesoncli import MesonCLI as Meson
 
 from os.path import join as join_paths
 import subprocess
