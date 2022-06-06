@@ -1,10 +1,22 @@
-# Python package
+# Meson CLI wrapper
 
 ## overview
 
 * * *
 
-Add info about this package here.
+There are two different ways of invoking Meson.
+First, you can run it directly from the source
+tree with the command `/path/to/source/meson.py`.
+Meson may also be installed in which case the
+command is simply `meson`. In this manual we only
+use the latter format for simplicity.
+
+Meson is invoked using the following syntax: 
+
+`meson [COMMAND] [COMMAND_OPTIONS]`
+
+This package wraps the commands into usable methods
+for your use case.
 
 ## tooling
 
