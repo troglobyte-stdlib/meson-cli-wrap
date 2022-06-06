@@ -39,10 +39,6 @@ class MesonCLI:
         return MesonConfigure(self._builddir).run(args)
     # end of method
 
-    def setup(self, args: list = []):
-        return MesonSetup(self._srcdir, self._builddir).run(args)
-    # end of method
-
     def compile(self, args: list = []):
         return MesonCompile(self._builddir).run(args)
     # end of method
