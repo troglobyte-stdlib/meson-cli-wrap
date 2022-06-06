@@ -5,6 +5,7 @@
 # author: Michael Gene Brockus
 # Gmail: <mail: michaelbrockus@gmail.com>
 #
+from code.mesoncli.install import MesonInstall
 from .mesoncli.subprojects import MesonSubprojects
 from .mesoncli.configure import MesonConfigure
 from .mesoncli.version import MesonVersion
@@ -41,6 +42,10 @@ class MesonCLI:
 
     def compile(self, args: list = []):
         return MesonCompile(self._builddir).run(args)
+    # end of method
+
+    def install(self, args: list = []):
+        return MesonInstall(self._builddir).run(args)
     # end of method
 
     def test(self, args: list = []):
