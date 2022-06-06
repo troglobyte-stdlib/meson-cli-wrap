@@ -28,6 +28,26 @@ class MesonCLI:
         self._builddir = builddir
     # end of method
 
+    @property
+    def sourcedir(self):
+        return self._sourcedir
+    # end of method
+
+    @property
+    def builddir(self):
+        return self._builddir
+    # end of method
+
+    @sourcedir.setter
+    def sourcedir(self, new_dir: Path):
+        self._sourcedir = new_dir
+    # end of method
+
+    @builddir.setter
+    def builddir(self, new_dir: Path):
+        self._builddir = new_dir
+    # end of method
+
     def setup(self, args: list = []):
         return MesonSetup(self._srcdir, self._builddir).run(args)
     # end of method
