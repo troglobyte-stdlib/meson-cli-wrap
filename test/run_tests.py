@@ -98,7 +98,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -118,7 +118,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -139,7 +139,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -160,7 +160,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -183,7 +183,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -204,7 +204,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -226,7 +226,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -248,7 +248,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -271,7 +271,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c', '--type=executable'])
         meson.setup(['--backend=ninja'])
@@ -296,7 +296,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
 
         meson.init(['--language=c'])
         meson.setup()
@@ -319,7 +319,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'samplesubproject'])
         os.mkdir('subprojects')
 
@@ -349,7 +349,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'sqlite'])
         os.mkdir('subprojects')
 
@@ -372,7 +372,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'sqlite'])
         os.mkdir('subprojects')
 
@@ -394,7 +394,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'sqlite'])
         os.mkdir('subprojects')
 
@@ -416,7 +416,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'sqlite'])
         os.mkdir('subprojects')
 
@@ -438,7 +438,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'sqlite'])
         os.mkdir('subprojects')
 
@@ -458,7 +458,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'sqlite'])
         os.mkdir('subprojects')
 
@@ -480,7 +480,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'sqlite'])
         os.mkdir('subprojects')
 
@@ -502,7 +502,7 @@ class TestMeson:
 
         #
         # Running Meson command
-        meson: Meson = Meson(sourcedir=tmpdir, builddir=(tmpdir / 'builddir'))
+        meson: Meson = Meson(srcdir=tmpdir, builddir=(tmpdir / 'builddir'))
         meson.init(['--language=c', '--deps', 'sqlite'])
         os.mkdir('subprojects')
 
