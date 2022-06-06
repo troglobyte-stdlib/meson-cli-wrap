@@ -8,7 +8,6 @@
 from code.meson import MesonCLI as Meson
 
 from os.path import join as join_paths
-from pathlib import Path
 import subprocess
 import functools
 import unittest
