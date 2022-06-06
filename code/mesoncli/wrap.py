@@ -16,7 +16,7 @@ class MesonWrap:
         object’s state. The task of constructors is to
         initialize(assign values) to the data members
         of the class when an object of class is created.
-        
+
         In this case anything for the meson wrap
         command.
         '''
