@@ -1,1 +1,4 @@
+meson==0.62.0
+ninja==1.10.2.3
+pytest-tempdir==2019.10.12
 pytest==6.1.2
