@@ -38,7 +38,7 @@ jobs:
       with:
         python-version: '3.9.x'
     - run: chromedriver --url-base=/wd/hub &
-    - run: python3 -m pip install pytest
+    - run: python3 -m pip install -r requirements.txt
     - run: python3 -m pytest test/run_tests.py
 
   ubuntu_linux:
