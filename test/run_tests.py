@@ -8,9 +8,54 @@
 from code.meson import MesonCLI as Meson
 
 from os.path import join as join_paths
+from pathlib import Path
+import subprocess
+import functools
+import unittest
 import shutil
 import os
 
+import pytest
+
+
+class CIUtility:
+    def is_ci(self):
+        if 'CI' in os.environ:
+            return True
+        return False
+
+    def is_pull(self):
+        # Travis
+        if os.environ.get('TRAVIS_PULL_REQUEST', 'false') != 'false':
+            return True
+        # Azure
+        if 'SYSTEM_PULLREQUEST_ISFORK' in os.environ:
+            return True
+        return False
+
+    @staticmethod
+    def _git_init():
+        #
+        # TODO: impl GitUtility and Git wrapper class
+        subprocess.Popen(['git', 'init'], stderr=subprocess.PIPE).communicate()[0]
+        subprocess.Popen(['git', 'config', 'user.name', 'Author Person'], stderr=subprocess.PIPE).communicate()[0]
+        subprocess.Popen(['git', 'config', 'user.email', 'teh_coderz@example.com'], stderr=subprocess.PIPE).communicate()[0]
+        subprocess.Popen(['git', 'add', '*'], stderr=subprocess.PIPE).communicate()[0]
+        subprocess.Popen(['git', 'commit', '-a', '-m', 'I am a project'], stderr=subprocess.PIPE).communicate()[0]
+
+    def skip_if_no_git(self, f):
+        '''
+        Skip this test if no git is found, unless we're on CI.
+        This allows users to run our test suite without having
+        git installed on, f.ex., macOS, while ensuring that our CI does not
+        silently skip the test because of misconfiguration.
+        '''
+        @functools.wraps(f)
+        def wrapped(self, *args, **kwargs):
+            if not self.is_ci() and shutil.which('git') is None:
+                raise unittest.SkipTest('Git not found')
+            return f(*args, **kwargs)
+        return
 
 TEST_WRAP: str = '''\
 [wrap-file]
