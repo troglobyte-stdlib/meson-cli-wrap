@@ -29,7 +29,7 @@ class MesonCLI:
     # end of method
 
     @property
-    def sourcedir(self):
+    def srcdir(self):
         return self._sourcedir
     # end of method
 
@@ -38,8 +38,8 @@ class MesonCLI:
         return self._builddir
     # end of method
 
-    @sourcedir.setter
-    def sourcedir(self, new_dir: Path):
+    @srcdir.setter
+    def srcdir(self, new_dir: Path):
         self._sourcedir = new_dir
     # end of method
 
