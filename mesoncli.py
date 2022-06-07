@@ -5,17 +5,17 @@
 # author: Michael Gene Brockus
 # Gmail: <mail: michaelbrockus@gmail.com>
 #
-from .commands.install import MesonInstall
-from .commands.subprojects import MesonSubprojects
-from .commands.configure import MesonConfigure
-from .commands.version import MesonVersion
-from .commands.compile import MesonCompile
-from .commands.clean import MesonClean
-from .commands.setup import MesonSetup
-from .commands.wrap import MesonWrap
-from .commands.dist import MesonDist
-from .commands.init import MesonInit
-from .commands.test import MesonTest
+from libmesoncli.commands.install import MesonInstall
+from libmesoncli.commands.subprojects import MesonSubprojects
+from libmesoncli.commands.configure import MesonConfigure
+from libmesoncli.commands.version import MesonVersion
+from libmesoncli.commands.compile import MesonCompile
+from libmesoncli.commands.clean import MesonClean
+from libmesoncli.commands.setup import MesonSetup
+from libmesoncli.commands.wrap import MesonWrap
+from libmesoncli.commands.dist import MesonDist
+from libmesoncli.commands.init import MesonInit
+from libmesoncli.commands.test import MesonTest
 
 from os.path import join as join_paths
 from pathlib import Path
